@@ -2,8 +2,8 @@ import { colors, fontSize } from "@/constants/tokens"
 import { BlurView } from "expo-blur" 
 import { Tabs } from "expo-router"
 import { FontAwesome, FontAwesome6, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
-import { StyleSheet, View } from "react-native"
-import { blue } from "react-native-reanimated/lib/typescript/reanimated2/Colors"
+import { StyleSheet } from "react-native"
+import { FloatingPlayer } from "@/components/FloatingPlayer"
 
 const TabsNavigation = () => {
   return (
@@ -13,7 +13,7 @@ const TabsNavigation = () => {
           tabBarActiveTintColor: colors.primary,
           tabBarLabelStyle: {
             fontSize: fontSize.xs,
-            fontWeight: '500',
+            fontWeight: '600',
           },
           headerShown: false,
           tabBarStyle: {
@@ -23,28 +23,19 @@ const TabsNavigation = () => {
 						borderTopWidth: 0,
 						paddingTop: 8,
 					},
+         
           tabBarBackground : ()=>(
-            <View
-              // intensity={95}
+            <BlurView
+              intensity={95}
               style={{
                 ...StyleSheet.absoluteFillObject,
-                // backgroundColor: colors.background,
-                backgroundColor: '#ffffff11',
-                // backfaceVisibility : 20,
-                borderRadius: 20,
+                overflow: 'hidden',
+                backgroundColor : '#00000099',
+								borderTopLeftRadius: 20,
+								borderTopRightRadius: 20,
               }}
             />
           ),
-          // tabBarBackground : ()=>(
-          //   <BlurView
-          //     intensity={95}
-          //     style={{
-          //       ...StyleSheet.absoluteFillObject,
-          //       backgroundColor: colors.background,
-          //       borderRadius: 20,
-          //     }}
-          //   />
-          // ),
         }}
       >
       <Tabs.Screen name="favorites" options={{
@@ -64,6 +55,14 @@ const TabsNavigation = () => {
         tabBarIcon :({color})=><FontAwesome6 name="users-line" size={24} color={color} />
       }}/>
     </Tabs >
+    <FloatingPlayer
+				style={{
+					position: 'absolute',
+					left: 8,
+					right: 8,
+					bottom: 78,
+				}}
+			/>
     </>
   )
 }

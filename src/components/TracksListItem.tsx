@@ -81,11 +81,11 @@ export const TracksListItem = ({
 						)}
 					</View>
 
-					<StopPropagation>
+					{/* <StopPropagation>
 						<TrackShortcutsMenu track={track}>
 							<Entypo name="dots-three-horizontal" size={18} color={colors.icon} />
 						</TrackShortcutsMenu>
-					</StopPropagation>
+					</StopPropagation> */}
 				</View>
 			</View>
 		</TouchableHighlight>

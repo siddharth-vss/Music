@@ -1,8 +1,8 @@
 import { colors } from '@/constants/tokens'
 import { defaultStyles } from '@/styles'
 import { Ionicons } from '@expo/vector-icons'
-import { StyleSheet, Text, View, ViewProps } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { StyleSheet, Text, TouchableOpacity, View, ViewProps } from 'react-native'
+// import { TouchableOpacity } from 'react-native-gesture-handler'
 import TrackPlayer, { Track } from 'react-native-track-player'
 
 type QueueControlsProps = {
@@ -27,8 +27,8 @@ export const QueueControls = ({ tracks, style, ...viewProps }: QueueControlsProp
 			{/* Play button */}
 			<View style={{ flex: 1 }}>
 				<TouchableOpacity onPress={handlePlay} activeOpacity={0.8} style={styles.button}>
-					<Ionicons name="play" size={22} color={colors.primary} />
 
+					<Ionicons name="play" size={22} color={colors.primary} />
 					<Text style={styles.buttonText}>Play</Text>
 				</TouchableOpacity>
 			</View>
