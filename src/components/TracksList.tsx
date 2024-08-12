@@ -5,8 +5,9 @@ import { utilsStyles } from '@/styles'
 import { useRef } from 'react'
 import { FlatList, FlatListProps, Text, View } from 'react-native'
 import FastImage from 'react-native-fast-image'
-import TrackPlayer, { Track } from 'react-native-track-player'
+import TrackPlayer, { Track, useActiveTrack  } from 'react-native-track-player'
 import { QueueControls } from './QueueControls'
+import { useLastActiveTrack } from '@/hooks/useLastActiveTrack'
 
 export type TracksListProps = Partial<FlatListProps<Track>> & {
 	id: string
@@ -25,9 +26,14 @@ export const TracksList = ({
 	...flatlistProps
 }: TracksListProps) => {
 	const queueOffset = useRef(0)
+	const sp = useActiveTrack()
 	const { activeQueueId, setActiveQueueId } = useQueue()
 
 	const handleTrackSelect = async (selectedTrack: Track) => {
+		await TrackPlayer.add(selectedTrack);
+		console.log(sp,selectedTrack);
+		// await TrackPlayer.load(selectedTrack);
+		// await TrackPlayer.play();
 		const trackIndex = tracks.findIndex((track) => track.url === selectedTrack.url)
 
 		if (trackIndex === -1) return
