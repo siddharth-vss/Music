@@ -31,9 +31,6 @@ export const TracksList = ({
 
 	const handleTrackSelect = async (selectedTrack: Track) => {
 		await TrackPlayer.add(selectedTrack);
-		console.log(sp,selectedTrack);
-		// await TrackPlayer.load(selectedTrack);
-		// await TrackPlayer.play();
 		const trackIndex = tracks.findIndex((track) => track.url === selectedTrack.url)
 
 		if (trackIndex === -1) return

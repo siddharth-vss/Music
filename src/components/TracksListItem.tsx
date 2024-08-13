@@ -6,7 +6,7 @@ import { defaultStyles } from '@/styles'
 import { Entypo, Ionicons } from '@expo/vector-icons'
 import { StyleSheet, Text, TouchableHighlight, View } from 'react-native'
 import FastImage from 'react-native-fast-image'
-import LoaderKit from 'react-native-loader-kit'
+// import LoaderKit from 'react-native-loader-kit'
 import { Track, useActiveTrack, useIsPlaying } from 'react-native-track-player'
 
 export type TracksListItemProps = {
@@ -38,12 +38,12 @@ export const TracksListItem = ({
 					/>
 
 					{isActiveTrack &&
-						(playing ? (
-							<LoaderKit
-								style={styles.trackPlayingIconIndicator}
-								name="LineScaleParty"
-								color={colors.icon}
-							/>
+						(playing ? (<></>
+							// <LoaderKit
+							// 	style={styles.trackPlayingIconIndicator}
+							// 	name="LineScaleParty"
+							// 	color={colors.icon}
+							// />
 						) : (
 							<Ionicons
 								style={styles.trackPausedIndicator}

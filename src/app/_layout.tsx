@@ -12,14 +12,14 @@ const App = () => {
   useEffect(() => {
     async function setupPlayer() {
       await TrackPlayer.setupPlayer();
-      await TrackPlayer.add({
-        id: 'trackId',
-        url: 'https://audio.jukehost.co.uk/Tn0JjUOFnQXt94p3CQCA4AkB3weF51Yf',
-        title: 'Changing',
-        artist: 'NEFFEX',
-        artwork: "https://i1.sndcdn.com/artworks-ZaFhh1AQdO4hqdYb-ssYmcA-t500x500.jpg"
-      });
-      await TrackPlayer.play();
+      // await TrackPlayer.add({
+      //   id: 'trackId',
+      //   url: 'https://audio.jukehost.co.uk/Tn0JjUOFnQXt94p3CQCA4AkB3weF51Yf',
+      //   title: 'Changing',
+      //   artist: 'NEFFEX',
+      //   artwork: "https://i1.sndcdn.com/artworks-ZaFhh1AQdO4hqdYb-ssYmcA-t500x500.jpg"
+      // });
+      // await TrackPlayer.play();
     }
 
     setupPlayer();
@@ -44,7 +44,7 @@ const App = () => {
 const RootNavigation = () => {
   return (<Stack>
     <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
-    <Stack.Screen name='player'  options={{headerTitle: 'Details'}}/>
+    <Stack.Screen name='player'  options={{headerShown: false}}/>
     {/* Add other screens*/}
   </Stack>)
 }
