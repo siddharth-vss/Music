@@ -4,7 +4,7 @@ import { getColors } from 'react-native-image-colors'
 import { AndroidImageColors, IOSImageColors } from 'react-native-image-colors/build/types'
 
 export const usePlayerBackground = (imageUrl: string) => {
-	const [sp, setImageColors] = useState<AndroidImageColors | null>(null)
+	const [ImageColors, setImageColors] = useState<AndroidImageColors | null>(null)
 
 	useEffect(() => {
 		console.log('hii',imageUrl);
@@ -16,5 +16,5 @@ export const usePlayerBackground = (imageUrl: string) => {
 		console.log('hii',imageUrl);
 	}, [imageUrl])
 
-	return { sp }
+	return { ImageColors }
 }
